@@ -122,4 +122,4 @@ console.log(store.findProductByName("Lamp").toString());
 store.removeProduct(product2);
 
 // List products from store inventory
-store.listProducts();
+console.log(store.listProducts());
