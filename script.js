@@ -53,6 +53,16 @@ class Store {
         this.inventory = currentInventory.push(product);
     }
 
+    // Method to remove a product from the inventory array
+    removeProduct(product) {
+        let currentInventory = this.inventory;
+        this.inventory.forEach(item => {
+            if (item === product) {
+                this.inventory.splice(this.inventory.indexOf(item), 1);
+            }
+        });
+    }
+
     // Method to get the total cost of all products in the inventory
     getInventoryValue() {
         let totalPrice = 0;
