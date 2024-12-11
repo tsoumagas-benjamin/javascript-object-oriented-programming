@@ -108,3 +108,6 @@ console.log(store.getInventoryValue());
 
 // Find and print the details of a specific product by name
 console.log(store.findProductByName("Lamp").toString());
+
+// Remove a product from the store inventory
+store.removeProduct(product2);
