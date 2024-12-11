@@ -18,12 +18,15 @@ class ProductProperties {
     }
 }
 
+// Defining the subclass for all perishable products
 class PerishableProductProperties extends ProductProperties {
+    // Constructor for the perishable product subclass, inherits from the parent class with expiration date
     constructor(name, price, quantity, expirationDate) {
         super(name, price, quantity);
         this.expirationDate = expirationDate;
     }
 
+    // Method to return perishable product details as a string
     toString() {
         return `Product: ${this.name}, Price: \$${this.price}, Quantity: ${this.quantity}, Expiration Date: ${this.expirationDate}`;
     }
