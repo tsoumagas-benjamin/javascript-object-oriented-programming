@@ -88,5 +88,12 @@ const products = [product1, product2, product3, product4, product5, product6];
 
 // Add all our products to a Store object
 const store = new Store(products);
+
 // Print total inventory value before applying a discount
+console.log(store.getInventoryValue());
+
+// Apply a 15% discount to some products
+Product.applyDiscount(products, 0.15);
+
+// Print total inventory value after applying a 15% discount
 console.log(store.getInventoryValue());
