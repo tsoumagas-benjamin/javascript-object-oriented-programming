@@ -1,5 +1,5 @@
 // Defining our parent class for all products
-class ProductProperties {
+class Product {
     // Constructor for the product class, requiring name, price, and quantity
     constructor(name, price, quantity) {
         this.name = name;
@@ -27,7 +27,7 @@ class ProductProperties {
 }
 
 // Defining the subclass for all perishable products
-class PerishableProductProperties extends ProductProperties {
+class PerishableProduct extends Product {
     // Constructor for the perishable product subclass, inherits from the parent class with expiration date
     constructor(name, price, quantity, expirationDate) {
         super(name, price, quantity);
@@ -37,6 +37,33 @@ class PerishableProductProperties extends ProductProperties {
     // Method to return perishable product details as a string
     toString() {
         return `Product: ${this.name}, Price: \$${this.price}, Quantity: ${this.quantity}, Expiration Date: ${this.expirationDate}`;
+    }
+}
+
+class Store {
+    constructor(inventory) {
+        this.inventory = inventory;
+    }
+
+    addProduct(product) {
+        let currentInventory = this.inventory;
+        this.inventory = currentInventory.push(product);
+    }
+
+    getInventoryValue() {
+        let totalPrice = 0;
+        this.inventory.forEach(product => {
+            totalPrice += (product.price * product.quantity); 
+        });
+        return totalPrice;
+    }
+
+    findProductByName(name) {
+        this.inventory.forEach(product => {
+            if (product.name === name) {
+                return product;
+            }
+        });
     }
 }
 
