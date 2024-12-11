@@ -9,7 +9,7 @@ class Product {
 
     // Method to multiply product price by quantity to return total value as a number
     getTotalValue() {
-        return (this.price * this.quantity);
+        return Math.round((this.price * this.quantity) * 100) / 100;
     }
 
     // Method to return product details as a string
