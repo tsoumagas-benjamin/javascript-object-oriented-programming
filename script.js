@@ -64,12 +64,13 @@ class Store {
 
     // Method to return a product from the inventory array if it exists, otherwise return null
     findProductByName(name) {
+        let target = null;
         this.inventory.forEach(product => {
             if (product.name === name) {
-                return product;
+                target = product;
             }
         });
-        return null;
+        return target;
     }
 }
 
@@ -80,9 +81,6 @@ const product3 = new PerishableProduct("Milk", 3.99, 2, "2024-12-25");
 const product4 = new Product("Table", 49.99, 1);
 const product5 = new Product("Lamp", 15.99, 3);
 const product6 = new Product("Rug", 7.99, 4);
-
-// Apply a 25% discount to some products
-// Product.applyDiscount([product1, product4, product6], 0.25);
 
 const products = [product1, product2, product3, product4, product5, product6];
 
@@ -97,3 +95,6 @@ Product.applyDiscount(products, 0.15);
 
 // Print total inventory value after applying a 15% discount
 console.log(store.getInventoryValue());
+
+// Find and print the details of a specific product by name
+console.log(store.findProductByName("Lamp").toString());
