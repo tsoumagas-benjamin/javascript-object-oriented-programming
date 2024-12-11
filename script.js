@@ -73,8 +73,16 @@ class Store {
     }
 }
 
-const product1 = new PerishableProductProperties("Tuna", 2.99, 5, "2025-2-15");
-const product2 = new PerishableProductProperties("Banana", 1.50, 7, "2024-12-18");
-const product3 = new PerishableProductProperties("Milk", 3.99, 2, "2024-12-25");
+// Instantiate 6 Product objects, 3 are perishable
+const product1 = new PerishableProduct("Tuna", 2.99, 5, "2025-2-15");
+const product2 = new PerishableProduct("Banana", 1.50, 7, "2024-12-18");
+const product3 = new PerishableProduct("Milk", 3.99, 2, "2024-12-25");
+const product4 = new Product("Table", 49.99, 1);
+const product5 = new Product("Lamp", 15.99, 3);
+const product6 = new Product("Rug", 7.99, 4);
 
-ProductProperties.applyDiscount([product1, product2, product3], 0.25);
+// Apply a 25% discount to some products
+Product.applyDiscount([product1, product4, product6], 0.25);
+
+// Add all our products to a Store object
+const store = new Store([product1, product2, product3, product4, product5, product6]);
