@@ -1,14 +1,18 @@
+// Defining our parent class for all products
 class ProductProperties {
+    // Constructor for the product class, requiring name, price, and quantity
     constructor(name, price, quantity) {
         this.name = name;
         this.price = price;
         this.quantity = quantity;
     }
 
+    // Method to multiply product price by quantity to return total value as a number
     getTotalValue() {
         return (this.price * this.quantity);
     }
 
+    // Method to return product details as a string
     toString() {
         return `Product: ${this.name}, Price: \$${this.price}, Quantity: ${this.quantity}`;
     }
