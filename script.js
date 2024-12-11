@@ -82,6 +82,14 @@ class Store {
         });
         return target;
     }
+
+    //Method to list store products
+    listProducts() {
+        let productList = [];
+        this.inventory.forEach(product => {
+            productList.append(product.name);
+        })
+    }
 }
 
 // Instantiate 6 Product objects, 3 are perishable
