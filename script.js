@@ -85,10 +85,11 @@ class Store {
 
     //Method to list store products
     listProducts() {
-        let productList = [];
+        let productArray = [];
         this.inventory.forEach(product => {
-            productList.append(product.name);
-        })
+            productArray.push(product.name);
+        });
+        return productArray;
     }
 }
 
@@ -119,3 +120,6 @@ console.log(store.findProductByName("Lamp").toString());
 
 // Remove a product from the store inventory
 store.removeProduct(product2);
+
+// List products from store inventory
+store.listProducts();
