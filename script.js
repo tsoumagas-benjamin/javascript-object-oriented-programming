@@ -57,7 +57,7 @@ class Store {
     getInventoryValue() {
         let totalPrice = 0;
         this.inventory.forEach(product => {
-            totalPrice += (product.price * product.quantity); 
+            totalPrice += product.getTotalValue(); 
         });
         return totalPrice;
     }
@@ -82,7 +82,11 @@ const product5 = new Product("Lamp", 15.99, 3);
 const product6 = new Product("Rug", 7.99, 4);
 
 // Apply a 25% discount to some products
-Product.applyDiscount([product1, product4, product6], 0.25);
+// Product.applyDiscount([product1, product4, product6], 0.25);
+
+const products = [product1, product2, product3, product4, product5, product6];
 
 // Add all our products to a Store object
-const store = new Store([product1, product2, product3, product4, product5, product6]);
+const store = new Store(products);
+// Print total inventory value before applying a discount
+console.log(store.getInventoryValue());
