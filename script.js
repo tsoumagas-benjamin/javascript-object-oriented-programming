@@ -40,16 +40,20 @@ class PerishableProduct extends Product {
     }
 }
 
+// Defining the Store class to manage product inventory
 class Store {
+    // Constructor for the store class to store an array
     constructor(inventory) {
         this.inventory = inventory;
     }
 
+    // Method to add a product to the inventory array
     addProduct(product) {
         let currentInventory = this.inventory;
         this.inventory = currentInventory.push(product);
     }
 
+    // Method to get the total cost of all products in the inventory
     getInventoryValue() {
         let totalPrice = 0;
         this.inventory.forEach(product => {
@@ -58,12 +62,14 @@ class Store {
         return totalPrice;
     }
 
+    // Method to return a product from the inventory array if it exists, otherwise return null
     findProductByName(name) {
         this.inventory.forEach(product => {
             if (product.name === name) {
                 return product;
             }
         });
+        return null;
     }
 }
 
